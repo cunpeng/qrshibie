@@ -8,7 +8,7 @@
 - 📱 多平台可以适用
 
 ## 🛠 离线版本/在线版本
-- 离线版本文件 qr.html + jsQR.js
+- 离线版本文件 index.html + jsQR.js
 - 在线版本文件 qr-online.html
 
 ## 使用说明（以宝塔面板为例）
