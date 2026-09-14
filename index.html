@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>二维码批量识别</title>
+    <title>二维码·星巴克批量识别</title>
     <style>
         * {
             margin: 0;
@@ -398,7 +398,7 @@
     <div class="container">
         <div class="header">
             <h1>⭐</h1>
-            <a href='https://10086.iepose.cn/qrcode_display.php?content=https://payapp.wechatpay.cn/sjt/qr/xzb_0a4934d5eaabd518799d912e625ca958_001' style='color: white; text-decoration:none;'>支持作者</a>
+            <a href='https://vip.napt.cn' style='color: white; text-decoration:none;'>返回主页</a>
         </div>
         
         <div class="security-notice">
@@ -416,8 +416,8 @@
             <div class="upload-area" id="uploadArea">
                 <div class="upload-icon">📤</div>
                 <div class="upload-text">点击选择图片或拖拽到此处</div>
-                <div class="upload-hint">支持 JPG、PNG、GIF、BMP 等格式</div>
-                <input type="file" id="fileInput" multiple accept="image/*">
+                <div class="upload-hint">支持 JPG、PNG、GIF、BMP 等格式 · 可分多次选择累加</div>
+                <input type="file" id="fileInput" multiple>
             </div>
 
             <div class="stats" id="stats" style="display: none;">
@@ -495,6 +495,9 @@
 
                 this.fileInput.addEventListener('change', (e) => {
                     this.handleFiles(e.target.files);
+                    // 处理完后清空 value，允许再次选择相同文件并触发 change 事件
+                    // 这样即使浏览器只支持单选，用户也能通过多次点击累加多张图片
+                    this.fileInput.value = '';
                 });
 
                 this.uploadArea.addEventListener('dragover', (e) => {
